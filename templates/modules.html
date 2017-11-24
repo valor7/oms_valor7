@@ -1,0 +1,11 @@
+{% if module_list %}
+<select name="module_list" class="form-control">
+    <option name="" value="" title="">请选择</option>
+    {% for module in module_list %}
+    <option name="module" value="{{ module.module }}" title="{{ module.remark }}">{{ module.name }}</option>
+    {% endfor %}
+</select>
+{% else %}
+<label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">None</label>
+{% endif %}
+

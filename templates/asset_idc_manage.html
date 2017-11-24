@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load myinclusion %}
+{% block css %}
+<link href="/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>{{ page_name }} <small>|&nbsp;<a href="{% url 'idc_asset_list' %}">数据中心</a></h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                            <form class="form-horizontal form-border" method="post" action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {% for i in form %}
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ i.label_tag }}
+                                    </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            {% if forloop.counter == 3 and action == 'add' %}
+                                            <div class="col-md-4 col-sm-4 col-xs-12" style="padding-left:0;padding-bottom:10px;">
+                                            <select class="select form-control" name="province" id="s1">
+                                                <option></option>
+                                            </select>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12" style="padding-left:0;">
+                                            <select class="select form-control" name="city" id="s2">
+                                                <option></option>
+                                            </select>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12" style="padding-left:0;">
+                                            <select class="select form-control" name="town" id="s3">
+                                                <option></option>
+                                            </select>
+                                            </div>
+                                            {% endif %}
+                                            {{ i }}
+                                            <div style="padding-top:10px;">
+                                            {{ i.errors }}
+                                            </div>
+                                        </div>
+                                </div>
+                                {% endfor %}
+                                {{ hform.as_p }}
+                                <div class="ln_solid"></div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-3">
+                                        {% ifequal action 'add' %}
+                                        <button id="send" type="submit" class="btn btn-success">添加</button>
+                                        {% endifequal %}
+                                        {% ifequal action 'edit' %}
+                                        <button id="send" type="submit" class="btn btn-success">更新</button:q
+                                        {% endifequal %}
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="/static/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/static/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<!--<script type="text/javascript" src="http://ip.qq.com/js/geo.js"></script>-->
+<script type="text/javascript" src="/static/js/geo.js" charset="UTF-8"></script>
+<script type="text/javascript">
+
+$('#id_contract_date').datetimepicker({
+        //language:  'fr',
+format: 'yyyy-mm-dd',
+language: 'zh-CN',
+weekStart: 1,
+setStartDate: new Date(),
+todayBtn:  1,
+autoclose: 1,
+todayHighlight: 1,
+startView: 3,
+minView: 2,
+forceParse: 0,
+showMeridian: 1,
+pickerPosition: "bottom-left"
+})
+
+{% ifequal action 'add' %}
+$(function(){
+    setup();preselect('广东省');promptinfo();
+})
+
+//这个函数是必须的，因为在geo.js里每次更改地址时会调用此函数
+function promptinfo()
+{
+}
+
+// 提交前处理idc_location的值
+$("#send").bind("click",function(){
+var s1 = $("#s1").val();
+var s2 = $("#s2").val();
+var s3 = $("#s3").val();
+var s4 = $("#id_idc_location").val();
+var idc_location = s1 + s2 + s3 + s4;
+$("#id_idc_location").val(idc_location);
+})
+{% endifequal %}
+</script>
+{% endblock %}

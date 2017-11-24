@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load myinclusion %}
+{% block css %}
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="tabbable" id="tabs-754998">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                        <a href="#panel-single" data-toggle="tab">文件下载</a>
+                        </li>
+                    </ul>
+
+                    <div class="x_panel" style="border-top:none;">
+                        <div class="x_title">
+                            <h2>文件管理 </h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="panel-single">
+                                    <form method="post" class="form-horizontal form-border" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {% if perms.deploy.edit_filedownload %}
+                                        <fieldset>
+                                        {% else %}
+                                        <fieldset disabled="disabled">
+                                        {% endif %}
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">目标主机 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                {% show_user_group_minions request.user.pk request.user.is_superuser 'single' %}
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">远程路径 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="text" class="form-control" name="arg" value="{{ arg }}" placeholder="/tmp">
+                                            </div>
+                                        </div>
+                                        <div name="ajax_result" class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">返回结果
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <fieldset disabled>
+                                                    <textarea class="form-control" name="result" rows="10">{{ ret }}</textarea>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <button type="submit" name="send" class="btn btn-success">查询</button>
+                                            </div>
+                                        </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="/static/js/csrf.js"></script>
+<script>
+    function ajaxList(_host, _arg){
+        $(".loading").show();
+        $.ajax({
+type:"POST",
+url:"{% url 'file_download' %}",
+data:{tgt_select:_host,arg:_arg,type:'list'},
+dataType:"html",
+success:function(ret) {
+    $(".loading").hide();
+    var ret = eval('('+ret+')');
+    var ret_arr = new Array();
+    var htmls = "";
+    ret_arr = ret.split("\n");
+    for(i=0;i<ret_arr.length;i++){
+        if(i<=1 || i>=ret_arr.length-5){
+            htmls = htmls+ret_arr[i]+"<br />";
+        }else{
+            htmls = htmls+"<a name=\"dl\" onClick=\"javascript:return file_dl(this);\" href='#'>"+ret_arr[i]+"</a><br />";
+        }
+    }
+    var html = "<label class=\"control-label col-md-3 col-sm-3 col-xs-12\">返回结果</label><div class=\"col-md-6 col-sm-6 col-xs-12\"><div class=\"form-control\">"+htmls+"</div><iframe style=\"display:none\" name=\"ifr_dl\"></iframe></div>";
+    $("div[name='ajax_result']").html(html);
+},
+errors:function(e){
+           alert("error");
+       }
+});
+}
+
+$(function(){
+        $("button[name='send']").bind("click",function(){
+            var tgt_select = $("select[name='tgt_select']").val();
+            var remote_path = $("input[name='arg']").val();
+            var arg = "ls "+remote_path;
+            ajaxList(tgt_select, arg);
+            return false;
+            })
+        })
+
+function file_dl(t){
+    var tgt_select = $("select[name='tgt_select']").val();
+    var filename = t.innerHTML;
+    var old_path = $("input[name='arg']").val();
+    if(old_path == filename){
+        var arg = filename;
+    }else{
+        var arg = old_path+"/"+filename;
+    }
+    var dict = new Array();
+    dict['tgt_select'] = tgt_select;
+    dict['arg']= arg;
+    dict['type'] = "download";
+    //$("input[name='arg']").val(file);
+    $(".loading").show();
+    $.ajax({
+type:"POST",
+url:"{% url 'file_download' %}",
+data:{tgt_select:tgt_select,arg:arg,type:'download'},
+dataType:"html",
+success:function(ret) {
+    $(".loading").hide();
+    var ret = eval('('+ret+')');
+    if(ret=="download"){
+        var dform = document.createElement("form");
+        dform.target="ifr_dl";
+        dform.method='get';
+        document.body.appendChild(dform);
+        for(var i in dict){
+        var input = document.createElement("input");
+        input.type="hidden";
+        input.name=i;
+        input.value=dict[i];
+        dform.appendChild(input);
+        }
+        dform.submit();
+            document.body.removeChild(dform);
+    }
+    else{
+        var arg = "ls " + ret;
+        $("input[name='arg']").val(ret);
+        ajaxList(tgt_select, arg);
+    }
+}
+});
+return false;
+}
+</script>
+
+{% endblock %}

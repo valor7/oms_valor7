@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% load myfilter %}
+{% block css %}
+<!-- iCheck -->
+<link href="/static/css/green.css" rel="stylesheet">
+<link href="/static/css/dataTables.bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <a href="{% url 'project_add' %}" style="float:left;" class="btn btn-info btn-sm" role="button"><i class="fa fa-plus"></i></a>
+                        <h2>项目管理 </h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a href="javascript:changeDisplay(1)" data-toggle="tooltip" data-placement="bottom" title="默认显示"><i class="fa fa-th"></i></a></li>
+                            <li><a href="javascript:changeDisplay(2)" data-toggle="tooltip" data-placement="bottom" title="表格显示"><i class="fa fa-table"></i></a></li>
+                            <li><a class="collapse-link" data-toggle="tooltip" data-placement="bottom" title="折叠内容"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content" style="padding-top:10px;border:none">
+                    <div class="loading"></div>
+                        <table id="datatable" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>项目名称</th>
+                                    <th>项目路径</th>
+                                    <th>源地址</th>
+                                    <th>负责人</th>
+                                    <th>属组</th>
+                                    <th>操作&nbsp;
+                                      <div id="env" class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-primary btn-xs" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                          <input type="radio" name="env" value="0"> &nbsp;测试&nbsp;
+                                        </label>
+                                        <label class="btn btn-default btn-xs" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                          <input type="radio" name="env" value="1"> &nbsp;正式&nbsp;
+                                        </label>
+                                      </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for p in projects %}
+                                <tr>
+                                    <td>{{ p.pname }}</td>
+                                    <td>{{ p.path }}</td>
+                                    <td>{{ p.src }}</td>
+                                    <td>{{ p.user.first_name }}</td>
+                                    <td>{{ p.user_group }}</td>
+                                    <td>
+                                    <fieldset {% if not request.user.pk == p.user.pk and not request.user.is_superuser %}disabled{% endif %}>
+                                        <a href="{% url 'project_edit' id=p.pk %}" class="btn btn-info btn-xs" {% if not perms.deploy.edit_project %}disabled="disabled"{% endif %}><i class="fa fa-pencil"></i></a>
+                                        <a onclick="project_manage(this, 'init');" href="javascript:void(0);" tag="" enforce="" name="{{ p.pk }}"
+                                           role="button" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="发布"
+                                           {% if not perms.deploy.edit_project %}disabled="disabled"{% endif %}><i class="fa fa-code"></i></a>
+                                        <a onclick="project_manage(this, 'update');" href="javascript:void(0);" tag="" enforce="" name="{{ p.pk }}"
+                                           role="button" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="更新"
+                                           {% if not perms.deploy.edit_project %}disabled="disabled"{% endif %}><i class="fa fa-refresh"></i></a>
+                                        <span data-toggle="tooltip" data-placement="top" title="回滚" class="dropdown mydropdown">
+                                            <a onclick="project_rollback(this);" href="javascript:void(0);" name="{{ p.pk }}"
+                                               role="button" class="btn btn-xs btn-warning dropdown-toggle" data-toggle="dropdown"
+                                               {% if not perms.deploy.edit_project %}disabled="disabled"{% endif %}><i class="fa fa-history"></i></a>
+                                            <ul class="dropdown-menu multi-level" role="menu" aria-lableledby="dropdownMenu"></ul>
+                                        </span>
+                                        <span data-toggle="tooltip" data-placement="top" title="进程" class="dropdown mydropdown">
+                                            <button class="btn btn-xs btn-dark dropdown-toggle" data-toggle="dropdown"
+                                                    {% if not perms.deploy.edit_project %}disabled="disabled"{% endif %}><i class="fa fa-recycle"></i></button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                     <a onclick="project_manage(this, 'start');" href="javascript:void(0);" name="{{ p.pk }}" tag="{{ p.process|str_split:'|'|list_item:0 }}" enforce="">启动</a>
+                                                </li>
+                                                <li>
+                                                     <a onclick="project_manage(this, 'reload');" href="javascript:void(0);" name="{{ p.pk }}" tag="{{ p.process|str_split:'|'|list_item:1 }}" enforce="">重启</a>
+                                                </li>
+                                                <li>
+                                                     <a onclick="project_manage(this, 'stop');" href="javascript:void(0);" name="{{ p.pk }}" tag="{{ p.process|str_split:'|'|list_item:2 }}" enforce="">停止</a>
+                                                </li>
+                                            </ul>
+                                        </span>
+                                        <a href="#" data-toggle="modal" data-target="#reqDelete-t{{ p.pk }}" class="btn btn-danger btn-xs"
+                                           {% if not perms.deploy.edit_project %}disabled="disabled"{% endif %}><i class="fa fa-trash-o"></i></a>
+                                    </fieldset>
+                                    </td>
+                                    <!-- 模态框（Modal） -->
+                                    <div class="modal fade" id="reqDelete-t{{ p.pk }}" tabindex="-1" role="dialog" aria-labelledby="reqDelete" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4 class="modal-title" id="reqDelete">提示</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    确认是否删除？
+                                                    <div><br /><strong>{{ p.pname }}</strong></div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">关闭</button>
+                                                    <a style="margin:4px;" class="btn btn-danger btn-sm" href="{% url 'project_delete' %}?id={{ p.pk }}&delete=1">删除</a>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    <div id="result"></div>
+                    <!-- 模态框（Modal） -->
+                    <div class="modal fade" id="result-modal-project" tabindex="-1" role="dialog" aria-labelledby="result-modal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content" style="background-color:#272822;color:#00ff00;">
+                                <div class="modal-header" style="border-bottom:1px solid #666">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <b class="modal-title" id="result-modal" style="color:#f8f8f2">发布结果</b>
+                                </div>
+                                <div id="modal-body" class="modal-body">
+
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="/static/js/jquery.dataTables.min.js"></script>
+<script src="/static/js/dataTables.bootstrap.min.js"></script>
+<script src="/static/js/bootstrap-modal-vertical.js"></script>
+<script type="text/javascript" src="/static/js/icheck.min.js"></script>
+<!-- Datatables -->
+<script>
+    $(document).ready(function() {
+            $('#datatable').dataTable();
+            });
+
+function changeStyle(obj){
+    obj.style.backgroundColor='#2A3F54';
+    obj.style.color='#e9edef';
+}
+
+function project_rollback(obj){
+    var env = $("#env .active input[name='env']").val();
+    if(env==null){
+        $("#modal-body").html("请选择测试/正式环境");
+        $('#result-modal-project').modal('show');
+        return false;
+    }
+    var url = "{% url 'project_deploy' %}?id=" + obj.name + "&env=" + env + "&get_rollback=1";
+    $(".loading").show();
+    $.ajax({
+type:"GET",
+url: url,
+data:{},
+dataType:"html",
+success:function(ret) {
+$(".loading").hide();
+var ret = JSON.parse( ret );
+var html = '';
+var sret=Object.keys(ret).sort().reverse();
+for(i in sret){
+if(sret[i]==0){
+    html = html + "<li><a>" + ret[sret[i]] + "</a></li>";
+} else if(sret[i]==-1){
+    $("#modal-body").html(ret[sret[i]]);
+    $('#result-modal-project').modal('show');
+    return false;
+} else{
+        html = html + "<li class='dropdown-submenu'><a class='dropdown-toggle' data-toggle='dropdown'"
+        + ret[sret[i]] +"'>" + ret[sret[i]] + "</a><ul style='margin-top:0;position:absolute;' class='dropdown-menu'><li class='dropdown-submenu'><a href='javascript:void(0);' onclick=\"project_manage(this, 'rollback');\" name='"
+        + obj.name + "' tag='" + ret[sret[i]] +"' enforce=''>" + "回滚</a></li><li class='dropdown-submenu'><a href='javascript:void(0);' onclick=\"project_manage(this, 'rollback_delete');\" name='"
+        + obj.name + "' tag='" + ret[sret[i]] +"' enforce=''>" + "删除</a></li><li class='dropdown-submenu'><a href='javascript:void(0);' onclick=\"project_manage(this, 'rollback_delete');\" name='"
+        + obj.name + "' tag='" + ret[sret[i]] +"' enforce='1'>" + "强制删除</a></li></ul></li>";
+}
+}
+$(obj).next().html(html);
+}
+})
+}
+
+function project_manage(obj, action){
+    var env = $("#env .active input[name='env']").val();
+    if(env==null){
+        $("#modal-body").html("请选择测试/正式环境");
+        $('#result-modal-project').modal('show');
+        return false;
+    }
+    var tag = $(obj).attr("tag");
+    var enforce = $(obj).attr("enforce");
+    var url = "{%  url 'project_deploy' %}?id=" + obj.name + "&tag=" + tag + "&enforce=" + enforce + "&env=" + env + "&" + action + "=1";
+    $(".loading").show();
+    $.ajax({
+type:"GET",
+url: url,
+data:{},
+dataType:"html",
+success:function(ret) {
+$(".loading").hide();
+var ret = JSON.parse( ret );
+var html = "";
+for(i in ret){
+html = html + "<p class='mydashed'><b style='color: #66d9ef'>" + i + "</b><br />" + ret[i]['result'] + "</p>";
+}
+
+$("#modal-body").html(html);
+$('#result-modal-project').modal('show');
+},
+errors:function(e){
+           alert("error");
+       }
+});
+return false;
+}
+</script>
+
+{% endblock %}

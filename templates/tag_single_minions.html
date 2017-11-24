@@ -1,0 +1,6 @@
+<select name="tgt_select" class="form-control">
+    <option name="" value="">请选择</option>
+    {% for tgt in tgt_list %}
+    <option name="tgt" value="{{ tgt }}">{{ tgt }}</option>
+    {% endfor %}
+</select>

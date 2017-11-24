@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% load myinclusion %}
+{% block css %}
+<link href="/static/css/bootstrapValidator.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="tabbable" id="tabs-754998">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                        <a href="#panel-single" data-toggle="tab">单机管理</a>
+                        </li>
+                        <li>
+                        <a href="#panel-group" data-toggle="tab">批量管理</a>
+                        </li>
+                    </ul>
+
+                    <div class="x_panel" style="border-top:none;">
+                        <div class="x_title">
+                            <h2>文件管理 </h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <div class="loading"></div>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="panel-single">
+                                    <form class="form-horizontal form-border" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {% if perms.deploy.edit_fileupload %}
+                                        <fieldset>
+                                        {% else %}
+                                        <fieldset disabled="disabled">
+                                        {% endif %}
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">目标主机 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                {% show_user_group_minions request.user.pk request.user.is_superuser 'multiple' %}
+                                            </div>
+                                        </div>
+                                        {% for i in form %}
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ i.label_tag }} <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                {{ i }}
+                                                {{ i.errors }}
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">返回结果
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <textarea class="form-control" name="result" rows="10">{{ ret }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <input type="submit" name="send" class="btn btn-success" value="提交">
+                                            </div>
+                                        </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div class="tab-pane" id="panel-group">
+                                    <form class="form-horizontal form-border" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {% if perms.deploy.edit_fileupload %}
+                                        <fieldset>
+                                        {% else %}
+                                        <fieldset disabled="disabled">
+                                        {% endif %}
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">目标主机 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                {% show_user_group_groups request.user.pk request.user.is_superuser %}
+                                            </div>
+                                        </div>
+                                        <div name="group_minions" class="item form-group">
+                                        </div>
+                                        {% for i in form %}
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ i.label_tag }}
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                {{ i }}
+                                                {{ i.errors }}
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">返回结果
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <textarea class="form-control" name="result" rows="10">{{ ret }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <input type="submit" name="send" class="btn btn-success" value="提交">
+                                            </div>
+                                        </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" class="form-control" value="" id="jid">
+                <input type="hidden" class="form-control" value="" id="exec_type">
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="/static/js/bootstrapValidator.min.js"></script>
+<script src="/static/js/csrf.js"></script>
+<script>
+
+{% for panel in groups %}
+$(document).ready(function(){
+        $("#{{ panel }} form").bootstrapValidator({
+fields:{
+tgt_select:{
+validators:{
+notEmpty:{
+message:'请选择主机'
+}
+}
+},
+remote_path:{
+validators:{
+notEmpty:{
+message:'请填写远程路径'
+}
+}
+},
+file_path:{
+validators:{
+notEmpty:{
+message:'请选择文件'
+},
+file: {
+extension:'zip,gz,bz2,sls,txt,html,conf,lua,sh,py',
+          message:'不支持该类型文件上传'
+      }
+}
+}
+}
+})
+.on('success.form.bv',function(e){
+        e.preventDefault();
+        file = $("#{{ panel }} input[name='file_path']")[0].files[0];
+        var formdata = new FormData();
+        var tgt_select = $("#{{ panel }} select[name='tgt_select']").val();
+        var remote_path = $("#{{ panel }} input[name='remote_path']").val();
+        var remark = $("#{{ panel }} input[name='remark']").val();
+        formdata.append('file_path',file);
+        formdata.append('tgt_select',tgt_select);
+        formdata.append('remote_path',remote_path);
+        formdata.append('remark',remark);
+        formdata.append('check_type',"{{ panel }}");
+        $(".loading").show();
+        $.ajax({
+url:"{% url 'file_ajax' %}",
+type: "POST",
+data: formdata,
+processData: false,
+contentType: false,
+success:function(ret){
+$(".loading").hide();
+var ret = eval('('+ret+')');
+$("#{{ panel }} textarea[name='result']").html(ret);
+$("#{{ panel }} input[name='file_path']").val("");
+},
+errors:function(e){
+alert(e);
+}
+})
+})
+})
+{% endfor %}
+
+
+$(function(){
+        $("#panel-group select[name='tgt_select']").bind("change",function(){
+            var tgt_select = $("#panel-group select[name='tgt_select']").val();
+            if(tgt_select!=""){
+            $.ajax({
+type:"POST",
+url:"{% url 'ajax_minions' %}",
+data:{tgt_select:tgt_select},
+dataType:"html",
+success:function(ret){
+var ret = eval('('+ret+')');
+var html = "<label class=\"control-label col-md-3 col-sm-3 col-xs-12\">包含主机</label><div class=\"col-md-6 col-sm-6 col-xs-12\"><fieldset disabled><textarea class=\"form-control\">"+ret+"</textarea></fieldset></div>";
+$("#panel-group div[name='group_minions']").html(html);
+}
+})
+            }
+            else{
+            $("#panel-group div[name='group_minions']").html("");
+            }
+            })
+})
+</script>
+{% endblock %}

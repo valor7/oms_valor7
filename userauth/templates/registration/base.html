@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ title }} | oms_valor7运维管理平台</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/static/css/custom.min.css" rel="stylesheet">
+  </head>
+<style>
+.webpicture{
+width: 26%;
+    background: url(/static/img/hyper.gif);
+    height: 81px;
+    border-radius: 6%;
+    background-size: 50%;
+    margin-left: -11%;
+    margin-bottom: -13%;
+}
+.title_valor7{
+	margin-left:23%;
+}
+.login{
+	background: #0a3a42;
+	font-family: 'Roboto', sans-serif;
+	color: rgba(255, 255, 255, 0.6);
+}
+.login a{
+	text-decoration:none;
+	color: rgba(56, 200, 255, 0.6);
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+}
+	input[type=text]:focus, input[type=password]:focus, textarea:focus {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+	border:solid 1.5px #2c97de;
+	box-shadow:0 0 5px rgba(44,151,22,0.2);
+}
+input[type='text'],input[type='password']{
+	height:39px;
+	width:366px;
+	border:solid 1px #a6cde6;
+}
+</style>
+  <body class="login">
+    <div>
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <h1><div class="webpicture"></div><span class="title_valor7"> valor7 运维管理</sapn></h1>
+          <section class="login_content">
+	        <form method="post" action="">
+            {% csrf_token %}
+		{% block content %}
+		{% endblock %}
+        </form>
+    	<!-- footer -->
+              <div class="clearfix"></div>
+              <br />
+	      <div>
+                <p>Copyright &copy; 2015-{% now "Y" %}. Powered by <a href="http://blog.csdn.net/valor7" target="_blank">valor7</a><br>www.valor7.com Privacy and Terms</p>
+              </div>
+    	<!-- footer end -->
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

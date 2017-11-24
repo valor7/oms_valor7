@@ -1,0 +1,346 @@
+{% extends 'base.html' %}
+{% load myinclusion %}
+{% block css %}
+<link href="/static/css/bootstrapValidator.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="tabbable" id="tabs-754998">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                        <a href="#panel-single" data-toggle="tab">单机管理</a>
+                        </li>
+                        <li>
+                        <a href="#panel-group" data-toggle="tab">批量管理</a>
+                        </li>
+                    </ul>
+
+                    <div class="x_panel" style="border-top:none;">
+                        <div class="x_title">
+                            <h2>文件管理 </h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <div class="loading"></div>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="panel-single">
+                                    <form class="form-horizontal form-border" method="post" action="" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {% if perms.deploy.edit_fileupload %}
+                                        <fieldset>
+                                        {% else %}
+                                        <fieldset disabled="disabled">
+                                        {% endif %}
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">目标主机 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                {% show_user_group_minions request.user.pk request.user.is_superuser 'single' %}
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">文件回滚 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select name="rollback_list" class="form-control">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">历史版本 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select name="rollback_history_list" class="form-control">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div name="rollback_history_remark" class="item form-group">
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">返回结果
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <textarea class="form-control" name="result" rows="10">{{ ret }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <input type="submit" name="send" class="btn btn-success" value="提交">
+
+                                            </div>
+                                        </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div class="tab-pane" id="panel-group">
+                                    <form class="form-horizontal form-border" method="post" action="" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {% if perms.deploy.edit_fileupload %}
+                                        <fieldset>
+                                        {% else %}
+                                        <fieldset disabled="disabled">
+                                        {% endif %}
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">目标主机 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                {% show_user_group_groups request.user.pk request.user.is_superuser %}
+                                            </div>
+                                        </div>
+                                        <div name="group_minions" class="item form-group">
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">文件回滚 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select name="rollback_list" class="form-control">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">历史版本 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select name="rollback_history_list" class="form-control">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div name="rollback_history_remark" class="item form-group">
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">返回结果
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <textarea class="form-control" name="result" rows="10">{{ ret }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <input type="submit" name="send" class="btn btn-success" value="提交">
+                                            </div>
+                                        </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" class="form-control" value="" id="jid">
+                <input type="hidden" class="form-control" value="" id="exec_type">
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="/static/js/bootstrapValidator.min.js"></script>
+<script src="/static/js/csrf.js"></script>
+<script>
+
+function remark(){
+    var remark = $("#module_list option:selected").attr("title");
+    $("#remark").text(remark);
+}
+remark();
+$("#module_list").bind("change",function(){
+        remark();
+        })
+
+$(function(){
+        {% for panel in groups %}
+        $("#{{ panel }} select[name='tgt_select']").bind("change",function(){
+            var tgt_select = $("#{{ panel }} select[name='tgt_select']").val();
+            getfilelist("{{ panel }}",tgt_select);
+            return false;
+            });
+        $("#{{ panel }} select[name='rollback_list']").bind("change",function(){
+            var rollback_list = $("#{{ panel }} select[name='rollback_list']").val();
+            var tgt_select = $("#{{ panel }} select[name='tgt_select']").val();
+            gethistorylist("{{ panel }}",tgt_select,rollback_list);
+            return false;
+            });
+        $("#{{ panel }} select[name='rollback_list']").bind("change",function(){
+            var rollback_list = $("#{{ panel }} select[name='rollback_list']").val();
+            var rollback_remark = $("#{{ panel }} select[name='rollback_history_list']").val();
+            var tgt_select = $("#{{ panel }} select[name='tgt_select']").val();
+            gethistoryremark("{{ panel }}",tgt_select,rollback_list,rollback_remark);
+            return false;
+            });
+        $("#{{ panel }} select[name='rollback_history_list']").bind("change",function(){
+            var rollback_list = $("#{{ panel }} select[name='rollback_list']").val();
+            var rollback_remark = $("#{{ panel }} select[name='rollback_history_list']").val();
+            var tgt_select = $("#{{ panel }} select[name='tgt_select']").val();
+            $("#{{ panel }} div[name='rollback_history_remark']").html('');
+            gethistoryremark("{{ panel }}",tgt_select,rollback_list,rollback_remark);
+            return false;
+            });
+        {% endfor %}
+});
+
+function getfilelist(_panel, _host){
+    $.ajax({
+type:"POST",
+url:"{% url 'ajax_rollback' %}",
+data:{tgt_select:_host,check_type:"rollback_file",get_type:_panel},
+datatype:"html",
+success:function(ret){
+var ret = eval('('+ret+')');
+var arr = new Array();
+var rst = '';
+for(i in ret){
+var rst = rst + "<option name=\"module\" value=\"" + ret[i] + "\" title=\"\">"+ret[i]+"</option>"
+}
+$("#"+_panel+" select[name='rollback_list']").html(rst);
+$("#"+_panel+" select[name='rollback_list']").get(0).selectedIndex = 0;
+gethistorylist(_panel,_host, $("#"+_panel+" select[name='rollback_list']").val());
+},
+errors:function(e){
+alert("error");
+}
+});
+}
+
+function gethistorylist(_panel, _host, _filename){
+    $.ajax({
+type:"POST",
+url:"{% url 'ajax_rollback' %}",
+data:{rollback_list:_filename,tgt_select:_host,check_type:"rollback_history_list",get_type:_panel},
+datatype:"html",
+success:function(ret){
+var ret = eval('('+ret+')');
+var arr = new Array();
+var rst = '';
+for(i in ret){
+var rst = rst + "<option name=\"module\" value=\"" + ret[i] + "\" title=\"\">"+ret[i]+"</option>"
+}
+$("#"+_panel+" select[name='rollback_history_list']").html(rst);
+$("#"+_panel+" select[name='rollback_history_list']").get(0).selectedIndex = 0;
+gethistoryremark(_panel, _host, _filename, $("#"+_panel+" select[name='rollback_history_list']").val());
+},
+errors:function(e){
+alert("error");
+}
+});
+}
+
+function gethistoryremark(_panel, _host, _rollback_list, _remark){
+    $.ajax({
+type:"POST",
+url:"{% url 'ajax_rollback' %}",
+data:{rollback_remark:_remark,tgt_select:_host,rollback_list:_rollback_list,check_type:"rollback_history_remark",get_type:_panel},
+datatype:"html",
+success:function(ret){
+var ret = eval('('+ret+')');
+var arr = new Array();
+var rst = '';
+if(ret[0]!=""){
+for(i in ret){
+var rst = rst + "<label class=\"control-label col-md-3 col-sm-3 col-xs-12\">备注 </label><div class=\"col-md-6 col-sm-6 col-xs-12\"><fieldset disabled><textarea class=\"form-control\" name=\"remark\" rows=\"1\">"+ret[i]+"</textarea></fieldset></div>"
+}
+$("#"+_panel+" div[name='rollback_history_remark']").html(rst);
+}
+},
+errors:function(e){
+alert("error");
+}
+});
+}
+
+{% for panel in groups %}
+$(document).ready(function(){
+        $("#{{ panel }} form").bootstrapValidator({
+fields:{
+tgt_select:{
+validators:{
+notEmpty:{
+message:'请选择主机'
+}
+}
+},
+rollback_list:{
+validators:{
+notEmpty:{
+message:'请选择文件'
+}
+}
+},
+rollback_history_list:{
+validators:{
+notEmpty:{
+message:'请选择历史版本'
+}
+}
+}
+}
+})
+.on('success.form.bv',function(e){
+        e.preventDefault();
+        var tgt_select = $("#{{ panel }} select[name='tgt_select']").val();
+        var rollback_list = $("#{{ panel }} select[name='rollback_list']").val();
+        var tag = $("#{{ panel }} select[name='rollback_history_list']").val();
+        $(".loading").show();
+        $.ajax({
+type:"POST",
+url:"{% url 'ajax_rollback' %}",
+data:{tgt_select:tgt_select,tag:tag,remote_path:rollback_list,check_type:"{{ panel }}"},
+dataType:"html",
+success:function(ret){
+$(".loading").hide();
+var ret = eval('('+ret+')');
+$("#{{ panel }} textarea[name='result']").html(ret);
+},
+});
+        })
+})
+{% endfor %}
+
+
+$(function(){
+        $("#panel-group select[name='tgt_select']").bind("change",function(){
+            var tgt_select = $("#panel-group select[name='tgt_select']").val();
+            if(tgt_select!=""){
+            $.ajax({
+type:"POST",
+url:"{% url 'ajax_minions' %}",
+data:{tgt_select:tgt_select},
+dataType:"html",
+success:function(ret){
+var ret = eval('('+ret+')');
+var html = "<label class=\"control-label col-md-3 col-sm-3 col-xs-12\">包含主机</label><div class=\"col-md-6 col-sm-6 col-xs-12\"><fieldset disabled><textarea class=\"form-control\">"+ret+"</textarea></fieldset></div>";
+$("#panel-group div[name='group_minions']").html(html);
+}
+})
+            }
+            else{
+            $("#panel-group div[name='group_minions']").html("");
+            }
+            })
+        })
+</script>
+{% endblock %}

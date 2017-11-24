@@ -1,0 +1,1628 @@
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Oct 22 18:51:26 2017] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 22 October 2017 18:26:16
+os: Linux-3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014
+nodename: server.example.com
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/oms_valor7
+writing pidfile to /var/run/uwsgi9090.pid
+detected binary path: /usr/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/oms_valor7/
+your processes number limit is 7807
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 2.7.5 (default, Feb 11 2014, 07:46:25)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-13)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2230e70
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145536 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "./oms_valor7/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/lib/python2.7/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup()
+  File "/usr/lib/python2.7/site-packages/django/__init__.py", line 17, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 55, in __getattr__
+    self._setup(name)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 99, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named soms.settings
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 25441)
+spawned uWSGI worker 1 (pid: 25446, cores: 1)
+Traceback (most recent call last):
+  File "./oms_valor7/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/lib/python2.7/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup()
+  File "/usr/lib/python2.7/site-packages/django/__init__.py", line 17, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 55, in __getattr__
+    self._setup(name)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 99, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named soms.settings
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 25446|app: -1|req: -1/1] 172.25.27.250 () {44 vars in 745 bytes} [Sun Oct 22 18:51:50 2017] GET / => generated 21 bytes in 15 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "./oms_valor7/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/lib/python2.7/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup()
+  File "/usr/lib/python2.7/site-packages/django/__init__.py", line 17, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 55, in __getattr__
+    self._setup(name)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 99, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named soms.settings
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 25446|app: -1|req: -1/2] 172.25.27.250 () {44 vars in 737 bytes} [Sun Oct 22 18:51:50 2017] GET /favicon.ico => generated 21 bytes in 1 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "./oms_valor7/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/lib/python2.7/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup()
+  File "/usr/lib/python2.7/site-packages/django/__init__.py", line 17, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 55, in __getattr__
+    self._setup(name)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 99, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named soms.settings
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 25446|app: -1|req: -1/3] 172.25.27.250 () {44 vars in 767 bytes} [Sun Oct 22 18:51:50 2017] GET /favicon.ico => generated 21 bytes in 1 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "./oms_valor7/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/lib/python2.7/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup()
+  File "/usr/lib/python2.7/site-packages/django/__init__.py", line 17, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 55, in __getattr__
+    self._setup(name)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 99, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named soms.settings
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 25446|app: -1|req: -1/4] 172.25.27.250 () {44 vars in 745 bytes} [Sun Oct 22 18:53:25 2017] GET / => generated 21 bytes in 51 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "./oms_valor7/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/lib/python2.7/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup()
+  File "/usr/lib/python2.7/site-packages/django/__init__.py", line 17, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 55, in __getattr__
+    self._setup(name)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 99, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named soms.settings
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 25446|app: -1|req: -1/5] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 18:55:12 2017] GET / => generated 21 bytes in 13 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "./oms_valor7/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/lib/python2.7/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup()
+  File "/usr/lib/python2.7/site-packages/django/__init__.py", line 17, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 55, in __getattr__
+    self._setup(name)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 99, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named soms.settings
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 25446|app: -1|req: -1/6] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 18:56:58 2017] GET / => generated 21 bytes in 10 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "./oms_valor7/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/lib/python2.7/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup()
+  File "/usr/lib/python2.7/site-packages/django/__init__.py", line 17, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 55, in __getattr__
+    self._setup(name)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/lib/python2.7/site-packages/django/conf/__init__.py", line 99, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named soms.settings
+unable to load app 0 (mountpoint='') (callable not found or import error)
+--- no python application found, check your startup logs for errors ---
+[pid: 25446|app: -1|req: -1/7] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 18:57:27 2017] GET / => generated 21 bytes in 3 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Sun Oct 22 19:01:35 2017 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Oct 22 19:01:55 2017] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 22 October 2017 18:26:16
+os: Linux-3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014
+nodename: server.example.com
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/oms_valor7
+writing pidfile to /var/run/uwsgi9090.pid
+detected binary path: /usr/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/oms_valor7/
+your processes number limit is 7807
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 2.7.5 (default, Feb 11 2014, 07:46:25)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-13)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x18cfe90
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145536 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x18cfe90 pid: 26533 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 26533)
+spawned uWSGI worker 1 (pid: 26546, cores: 1)
+[pid: 26546|app: 0|req: 1/1] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:02:02 2017] GET / => generated 14023 bytes in 493 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 2/2] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:19:07 2017] GET / => generated 14023 bytes in 1841 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 3/3] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:22:02 2017] GET / => generated 14023 bytes in 69 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 4/4] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:22:03 2017] GET / => generated 14023 bytes in 31 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 5/5] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:22:04 2017] GET / => generated 14023 bytes in 39 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 6/6] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:25:33 2017] GET / => generated 14035 bytes in 1165 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 7/7] 172.25.27.250 () {46 vars in 818 bytes} [Sun Oct 22 19:25:42 2017] GET /deploy/hosts_list/ => generated 17749 bytes in 119 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 8/8] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 19:25:45 2017] GET /deploy/hosts_list/ => generated 17749 bytes in 29 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 9/9] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 19:33:48 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 930 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 10/10] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 19:40:28 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 1022 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /statis
+[pid: 26546|app: 0|req: 11/11] 172.25.27.250 () {44 vars in 757 bytes} [Sun Oct 22 19:40:36 2017] GET /statis => generated 10954 bytes in 92 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 12/12] 172.25.27.250 () {44 vars in 755 bytes} [Sun Oct 22 19:40:53 2017] GET /admin => generated 0 bytes in 18 msecs (HTTP/1.1 301) 3 headers in 122 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 13/13] 172.25.27.250 () {44 vars in 757 bytes} [Sun Oct 22 19:40:53 2017] GET /admin/ => generated 3015 bytes in 955 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 14/14] 172.25.27.250 () {44 vars in 757 bytes} [Sun Oct 22 19:41:04 2017] GET /admin/ => generated 3015 bytes in 321 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 15/15] 172.25.27.250 () {44 vars in 745 bytes} [Sun Oct 22 19:41:08 2017] GET / => generated 14023 bytes in 50 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /statis
+[pid: 26546|app: 0|req: 16/16] 172.25.27.250 () {44 vars in 757 bytes} [Sun Oct 22 19:41:13 2017] GET /statis => generated 10954 bytes in 37 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /index
+[pid: 26546|app: 0|req: 17/17] 172.25.27.250 () {44 vars in 755 bytes} [Sun Oct 22 19:41:23 2017] GET /index => generated 10951 bytes in 28 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 18/18] 172.25.27.250 () {44 vars in 745 bytes} [Sun Oct 22 19:43:09 2017] GET / => generated 14023 bytes in 727 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 19/19] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:47:43 2017] GET / => generated 14023 bytes in 906 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 20/20] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:50:03 2017] GET / => generated 14023 bytes in 1051 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 21/21] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:51:16 2017] GET / => generated 14023 bytes in 1276 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 22/22] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:53:09 2017] GET / => generated 14023 bytes in 112 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 23/23] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:53:35 2017] GET / => generated 14023 bytes in 29 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 24/24] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:57:03 2017] GET / => generated 14023 bytes in 91 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 25/25] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:57:22 2017] GET / => generated 14023 bytes in 37 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 26/26] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:58:02 2017] GET / => generated 14023 bytes in 32 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 27/27] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:58:03 2017] GET / => generated 14023 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 28/28] 172.25.27.250 () {46 vars in 776 bytes} [Sun Oct 22 19:58:33 2017] GET / => generated 14023 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 29/29] 172.25.27.250 () {46 vars in 818 bytes} [Sun Oct 22 19:58:55 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 85 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 30/30] 172.25.27.250 () {48 vars in 849 bytes} [Sun Oct 22 19:59:49 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 31/31] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:00:26 2017] GET /deploy/key_list_import/ => generated 0 bytes in 17709 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 32/32] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:00:44 2017] GET /deploy/key_list_import/ => generated 0 bytes in 16268 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 33/33] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:01:00 2017] GET /deploy/key_list_import/ => generated 0 bytes in 16601 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 34/34] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:01:17 2017] GET /deploy/key_list_import/ => generated 0 bytes in 16019 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 35/35] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:01:33 2017] GET /deploy/key_list_import/ => generated 0 bytes in 15630 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 36/36] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:01:48 2017] GET /deploy/key_list_import/ => generated 0 bytes in 15733 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE9\x83\xA8\xE7\xBD\xB2...' for column 'type' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE5\x88\xB7\xE6\x96\xB0...' for column 'action' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE5\x88\xB7\xE6\x96\xB0...' for column 'content' at row 1
+  return self.cursor.execute(query, args)
+
+[pid: 26546|app: 0|req: 37/37] 172.25.27.250 () {48 vars in 881 bytes} [Sun Oct 22 20:02:04 2017] GET /deploy/key_manage?hostname=server9&flush=1 => generated 1 bytes in 15463 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 38/38] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:46:15 2017] GET /deploy/key_list_import/ => generated 0 bytes in 19287 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 39/39] 172.25.27.250 () {48 vars in 867 bytes} [Sun Oct 22 20:46:35 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 197 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 40/40] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:46:50 2017] GET /deploy/key_list_import/ => generated 0 bytes in 16654 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 41/41] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 20:47:06 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 66 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE5\x88\xA0\xE9\x99\xA4...' for column 'action' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE5\x88\xA0\xE9\x99\xA4...' for column 'content' at row 1
+  return self.cursor.execute(query, args)
+
+[pid: 26546|app: 0|req: 42/42] 172.25.27.250 () {46 vars in 885 bytes} [Sun Oct 22 20:47:14 2017] GET /deploy/key_manage?hostname=server9&delete=1 => generated 0 bytes in 448 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 43/43] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 20:47:14 2017] GET /deploy/hosts_list/ => generated 17438 bytes in 43 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[u'desktop.example.com']
+[u'server9']
+not create
+[pid: 26546|app: 0|req: 44/44] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:47:25 2017] GET /deploy/key_list_import/ => generated 0 bytes in 810 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 45/45] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 20:47:26 2017] GET /deploy/hosts_list/ => generated 17438 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE6\xB7\xBB\xE5\x8A\xA0...' for column 'action' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE6\xB7\xBB\xE5\x8A\xA0...' for column 'content' at row 1
+  return self.cursor.execute(query, args)
+
+[pid: 26546|app: 0|req: 46/46] 172.25.27.250 () {46 vars in 879 bytes} [Sun Oct 22 20:47:28 2017] GET /deploy/key_manage?hostname=server9&add=1 => generated 0 bytes in 470 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 47/47] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 20:47:29 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 25 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 48/48] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:47:32 2017] GET /deploy/key_list_import/ => generated 0 bytes in 16648 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 49/49] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 20:47:48 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 50/50] 172.25.27.250 () {48 vars in 881 bytes} [Sun Oct 22 20:47:52 2017] GET /deploy/key_manage?hostname=server9&flush=1 => generated 1 bytes in 15789 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 51/51] 172.25.27.250 () {48 vars in 881 bytes} [Sun Oct 22 20:48:08 2017] GET /deploy/key_manage?hostname=server9&flush=1 => generated 1 bytes in 17387 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 52/52] 172.25.27.250 () {46 vars in 885 bytes} [Sun Oct 22 20:48:25 2017] GET /deploy/key_manage?hostname=server9&delete=1 => generated 0 bytes in 255 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 53/53] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 20:48:26 2017] GET /deploy/hosts_list/ => generated 17438 bytes in 85 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[u'desktop.example.com']
+[u'server9']
+not create
+[pid: 26546|app: 0|req: 54/54] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:49:28 2017] GET /deploy/key_list_import/ => generated 0 bytes in 843 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 55/55] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 20:49:29 2017] GET /deploy/hosts_list/ => generated 17438 bytes in 29 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[u'desktop.example.com']
+[u'server9']
+not create
+[pid: 26546|app: 0|req: 56/56] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:49:31 2017] GET /deploy/key_list_import/ => generated 0 bytes in 558 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 57/57] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 20:49:31 2017] GET /deploy/hosts_list/ => generated 17438 bytes in 30 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 58/58] 172.25.27.250 () {46 vars in 879 bytes} [Sun Oct 22 20:49:33 2017] GET /deploy/key_manage?hostname=server9&add=1 => generated 0 bytes in 742 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 59/59] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 20:49:34 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 105 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 60/60] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:49:37 2017] GET /deploy/key_list_import/ => generated 0 bytes in 15650 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 61/61] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:49:53 2017] GET /deploy/key_list_import/ => generated 0 bytes in 15405 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 62/62] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:50:08 2017] GET /deploy/key_list_import/ => generated 0 bytes in 15519 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 63/63] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:50:24 2017] GET /deploy/key_list_import/ => generated 0 bytes in 16957 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 64/64] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 20:50:40 2017] GET /deploy/key_list_import/ => generated 0 bytes in 17782 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 65/65] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 20:50:58 2017] GET /admin/ => generated 3015 bytes in 371 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 66/66] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 20:50:59 2017] GET /deploy/group_list/ => generated 13767 bytes in 120 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 67/67] 172.25.27.250 () {46 vars in 848 bytes} [Sun Oct 22 20:50:59 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 100 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 68/68] 172.25.27.250 () {46 vars in 842 bytes} [Sun Oct 22 20:50:59 2017] GET /deploy/module_deploy/ => generated 25056 bytes in 125 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 69/69] 172.25.27.250 () {46 vars in 848 bytes} [Sun Oct 22 20:50:59 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 74 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 70/70] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 20:50:59 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 37 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 71/71] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 20:51:01 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 453 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 72/72] 172.25.27.250 () {46 vars in 848 bytes} [Sun Oct 22 20:51:09 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 79 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE8\xBF\x9C\xE7\xA8\x8B...' for column 'content' at row 1
+  return self.cursor.execute(query, args)
+
+[pid: 26546|app: 0|req: 73/73] 172.25.27.250 () {54 vars in 1059 bytes} [Sun Oct 22 20:51:19 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 11358 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /deploy/remote_exec/check_result/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./deploy/views.py", line 728, in salt_ajax_result
+    rst_all = AjaxResult(jid,result_type,check_type)
+  File "./deploy/views.py", line 355, in AjaxResult
+    for k,v in rst.items():
+AttributeError: 'unicode' object has no attribute 'items'
+[pid: 26546|app: 0|req: 74/74] 172.25.27.250 () {54 vars in 1065 bytes} [Sun Oct 22 20:51:35 2017] POST /deploy/remote_exec/check_result/ => generated 13009 bytes in 2489 msecs (HTTP/1.1 500) 3 headers in 107 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 75/75] 172.25.27.250 () {54 vars in 1059 bytes} [Sun Oct 22 20:52:01 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 8395 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 76/76] 172.25.27.250 () {46 vars in 806 bytes} [Sun Oct 22 20:52:19 2017] GET / => generated 14023 bytes in 52 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 77/77] 172.25.27.250 () {46 vars in 818 bytes} [Sun Oct 22 20:52:21 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 78/78] 172.25.27.250 () {46 vars in 848 bytes} [Sun Oct 22 20:52:23 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 45 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 79/79] 172.25.27.250 () {54 vars in 1059 bytes} [Sun Oct 22 20:52:42 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 7043 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /deploy/remote_exec/check_result/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./deploy/views.py", line 728, in salt_ajax_result
+    rst_all = AjaxResult(jid,result_type,check_type)
+  File "./deploy/views.py", line 355, in AjaxResult
+    for k,v in rst.items():
+AttributeError: 'unicode' object has no attribute 'items'
+[pid: 26546|app: 0|req: 80/80] 172.25.27.250 () {54 vars in 1065 bytes} [Sun Oct 22 20:54:37 2017] POST /deploy/remote_exec/check_result/ => generated 13009 bytes in 1279 msecs (HTTP/1.1 500) 3 headers in 107 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 81/81] 172.25.27.250 () {54 vars in 1059 bytes} [Sun Oct 22 20:54:46 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 11684 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 82/82] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:04 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 62 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 83/83] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:04 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 84/84] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:05 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 85/85] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:05 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 86/86] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:05 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 87/87] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:05 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 88/88] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:05 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 89/89] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:05 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 90/90] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:06 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 91/91] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:06 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 92/92] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:06 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 93/93] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:06 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 94/94] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:06 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 95/95] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:06 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 96/96] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:06 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 97/97] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:07 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 98/98] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:07 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 99/99] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:07 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 100/100] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:07 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 101/101] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:07 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 102/102] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:07 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 103/103] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:07 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 104/104] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:08 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 105/105] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:08 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 106/106] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:08 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 107/107] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:08 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 108/108] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:08 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 59 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 109/109] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:08 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 110/110] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:08 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 111/111] 172.25.27.250 () {46 vars in 824 bytes} [Sun Oct 22 20:55:09 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 112/112] 172.25.27.250 () {54 vars in 1059 bytes} [Sun Oct 22 20:55:16 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 5468 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /deploy/remote_exec/check_result/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./deploy/views.py", line 728, in salt_ajax_result
+    rst_all = AjaxResult(jid,result_type,check_type)
+  File "./deploy/views.py", line 355, in AjaxResult
+    for k,v in rst.items():
+AttributeError: 'unicode' object has no attribute 'items'
+[pid: 26546|app: 0|req: 113/113] 172.25.27.250 () {54 vars in 1065 bytes} [Sun Oct 22 20:55:26 2017] POST /deploy/remote_exec/check_result/ => generated 13009 bytes in 998 msecs (HTTP/1.1 500) 3 headers in 107 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 114/114] 172.25.27.250 () {46 vars in 842 bytes} [Sun Oct 22 20:55:32 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 32 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 115/115] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 20:55:36 2017] GET /deploy/group_list/ => generated 13767 bytes in 25 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 116/116] 172.25.27.250 () {46 vars in 848 bytes} [Sun Oct 22 20:55:38 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 117/117] 172.25.27.250 () {46 vars in 848 bytes} [Sun Oct 22 20:55:41 2017] GET /deploy/module_deploy/ => generated 25056 bytes in 39 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 118/118] 172.25.27.250 () {46 vars in 849 bytes} [Sun Oct 22 20:55:43 2017] GET /deploy/advanced_manage/ => generated 28505 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 119/119] 172.25.27.250 () {46 vars in 845 bytes} [Sun Oct 22 20:55:45 2017] GET /deploy/project_list/ => generated 19463 bytes in 61 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 120/120] 172.25.27.250 () {46 vars in 858 bytes} [Sun Oct 22 20:55:49 2017] GET /deploy/file_manage/download/ => generated 19979 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 121/121] 172.25.27.250 () {46 vars in 862 bytes} [Sun Oct 22 20:56:01 2017] GET /deploy/file_manage/upload/ => generated 27260 bytes in 68 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 122/122] 172.25.27.250 () {46 vars in 844 bytes} [Sun Oct 22 20:56:05 2017] GET /asset/server_info/ => generated 17120 bytes in 47 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 123/123] 172.25.27.250 () {46 vars in 830 bytes} [Sun Oct 22 20:56:07 2017] GET /asset/idc/list/ => generated 16330 bytes in 25 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /deploy/task_list/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./deploy/views.py", line 1087, in salt_task_list
+    return render(request, 'salt_task_list.html', {'all_logs':logs})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python2.7/site-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 240, in __len__
+    self._fetch_all()
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (1267, "Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '<>'")
+[pid: 26546|app: 0|req: 124/124] 172.25.27.250 () {46 vars in 831 bytes} [Sun Oct 22 20:56:09 2017] GET /deploy/task_list/ => generated 191171 bytes in 235 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 125/125] 172.25.27.250 () {44 vars in 745 bytes} [Sun Oct 22 20:56:17 2017] GET / => generated 14023 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 126/126] 172.25.27.250 () {46 vars in 818 bytes} [Sun Oct 22 20:56:20 2017] GET /asset/server_info/ => generated 17120 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 127/127] 172.25.27.250 () {46 vars in 830 bytes} [Sun Oct 22 20:56:21 2017] GET /asset/idc/list/ => generated 16330 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /deploy/task_list/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./deploy/views.py", line 1087, in salt_task_list
+    return render(request, 'salt_task_list.html', {'all_logs':logs})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python2.7/site-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 240, in __len__
+    self._fetch_all()
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (1267, "Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '<>'")
+[pid: 26546|app: 0|req: 128/128] 172.25.27.250 () {46 vars in 831 bytes} [Sun Oct 22 20:56:24 2017] GET /deploy/task_list/ => generated 191175 bytes in 179 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 129/129] 172.25.27.250 () {44 vars in 745 bytes} [Sun Oct 22 20:56:31 2017] GET / => generated 14023 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 130/130] 172.25.27.250 () {46 vars in 818 bytes} [Sun Oct 22 20:56:35 2017] GET /deploy/task_check/ => generated 18065 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 131/131] 172.25.27.250 () {46 vars in 840 bytes} [Sun Oct 22 20:56:37 2017] GET /deploy/task_running/ => generated 16047 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 132/132] 172.25.27.250 () {46 vars in 838 bytes} [Sun Oct 22 20:56:40 2017] GET /deploy/task_check/ => generated 18065 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+Internal Server Error: /deploy/task_list/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./deploy/views.py", line 1087, in salt_task_list
+    return render(request, 'salt_task_list.html', {'all_logs':logs})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python2.7/site-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 240, in __len__
+    self._fetch_all()
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (1267, "Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '<>'")
+[pid: 26546|app: 0|req: 133/133] 172.25.27.250 () {46 vars in 834 bytes} [Sun Oct 22 20:56:41 2017] GET /deploy/task_list/ => generated 191178 bytes in 177 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 134/134] 172.25.27.250 () {44 vars in 745 bytes} [Sun Oct 22 20:57:24 2017] GET / => generated 14023 bytes in 28 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 135/135] 172.25.27.250 () {46 vars in 820 bytes} [Sun Oct 22 20:57:31 2017] GET /userauth/user/list/ => generated 21390 bytes in 49 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 136/136] 172.25.27.250 () {46 vars in 841 bytes} [Sun Oct 22 20:57:34 2017] GET /userauth/group/list/ => generated 14785 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 137/137] 172.25.27.250 () {46 vars in 832 bytes} [Sun Oct 22 20:57:36 2017] GET /user_perm/exec/ => generated 13710 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 138/138] 172.25.27.250 () {46 vars in 849 bytes} [Sun Oct 22 20:57:39 2017] GET /user_perm/exec/manage/add/ => generated 17237 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 139/139] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 20:57:43 2017] GET /user_perm/dir/ => generated 13709 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 140/140] 172.25.27.250 () {46 vars in 828 bytes} [Sun Oct 22 20:57:47 2017] GET /audit/log_audit/ => generated 26971 bytes in 40 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 141/141] 172.25.27.250 () {46 vars in 834 bytes} [Sun Oct 22 20:58:02 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 142/142] 172.25.27.250 () {46 vars in 848 bytes} [Sun Oct 22 20:58:04 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 143/143] 172.25.27.250 () {54 vars in 1059 bytes} [Sun Oct 22 20:58:13 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 5025 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /deploy/task_list/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./deploy/views.py", line 1087, in salt_task_list
+    return render(request, 'salt_task_list.html', {'all_logs':logs})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python2.7/site-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 240, in __len__
+    self._fetch_all()
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (1267, "Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '<>'")
+[pid: 26546|app: 0|req: 144/144] 172.25.27.250 () {46 vars in 840 bytes} [Sun Oct 22 20:58:28 2017] GET /deploy/task_list/ => generated 191183 bytes in 186 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 145/145] 172.25.27.250 () {44 vars in 745 bytes} [Sun Oct 22 20:58:34 2017] GET / => generated 14023 bytes in 27 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 146/146] 172.25.27.250 () {44 vars in 745 bytes} [Sun Oct 22 20:59:42 2017] GET / => generated 14023 bytes in 85 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 147/147] 172.25.27.250 () {46 vars in 830 bytes} [Sun Oct 22 21:00:01 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 494 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 148/148] 172.25.27.250 () {46 vars in 842 bytes} [Sun Oct 22 21:00:07 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 149/149] 172.25.27.250 () {48 vars in 881 bytes} [Sun Oct 22 21:00:10 2017] GET /deploy/key_manage?hostname=server9&flush=1 => generated 1 bytes in 15896 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 150/150] 172.25.27.250 () {48 vars in 881 bytes} [Sun Oct 22 21:00:26 2017] GET /deploy/key_manage?hostname=server9&flush=1 => generated 1 bytes in 15564 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 151/151] 172.25.27.250 () {46 vars in 848 bytes} [Sun Oct 22 21:00:42 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 152/152] 172.25.27.250 () {46 vars in 848 bytes} [Sun Oct 22 21:00:42 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 153/153] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:42 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 154/154] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:47 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 155/155] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:48 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 590 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 156/156] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:49 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 24 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 157/157] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:50 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 158/158] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:51 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 24 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 159/159] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:52 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 160/160] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:52 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 161/161] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:53 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 162/162] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:53 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 163/163] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:54 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 164/164] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:54 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 165/165] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:55 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 30 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 166/166] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:55 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 167/167] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:55 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 168/168] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:55 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 31 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 169/169] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:55 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 170/170] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:56 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 171/171] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:56 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 172/172] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:56 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 173/173] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:56 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 174/174] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:57 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 175/175] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:57 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 33 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 176/176] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:57 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 34 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 177/177] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:57 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 178/178] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:57 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 179/179] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:58 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 28 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 180/180] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:58 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 27 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 181/181] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:58 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 182/182] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:58 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 183/183] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:58 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 27 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 184/184] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:58 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 24 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 185/185] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:59 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 186/186] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:59 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 187/187] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:59 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 188/188] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:59 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 189/189] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:59 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 190/190] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:00:59 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 191/191] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:00 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 29 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 192/192] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:00 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 193/193] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:00 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 24 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 194/194] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:00 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 195/195] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:00 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 25 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 196/196] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:00 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 197/197] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:01 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 198/198] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:01 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 35 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 199/199] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:01 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 200/200] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:01 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 35 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 201/201] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:01 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 136 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 202/202] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:01 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 69 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 203/203] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:02 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 32 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 204/204] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:02 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 205/205] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:02 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 206/206] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:02 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 39 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 207/207] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:02 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 39 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 208/208] 172.25.27.250 () {46 vars in 812 bytes} [Sun Oct 22 21:01:02 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 43 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 209/209] 172.25.27.250 () {46 vars in 848 bytes} [Sun Oct 22 21:01:17 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 210/210] 172.25.27.250 () {54 vars in 1059 bytes} [Sun Oct 22 21:01:30 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 9409 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /deploy/remote_exec/check_result/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./deploy/views.py", line 728, in salt_ajax_result
+    rst_all = AjaxResult(jid,result_type,check_type)
+  File "./deploy/views.py", line 355, in AjaxResult
+    for k,v in rst.items():
+AttributeError: 'unicode' object has no attribute 'items'
+[pid: 26546|app: 0|req: 211/211] 172.25.27.250 () {54 vars in 1065 bytes} [Sun Oct 22 21:01:44 2017] POST /deploy/remote_exec/check_result/ => generated 13009 bytes in 1226 msecs (HTTP/1.1 500) 3 headers in 107 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 212/212] 172.25.27.250 () {54 vars in 1059 bytes} [Sun Oct 22 21:01:55 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 4473 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 213/213] 172.25.27.250 () {54 vars in 1059 bytes} [Sun Oct 22 21:02:26 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 10025 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 214/214] 172.25.27.250 () {54 vars in 1059 bytes} [Sun Oct 22 21:03:07 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 7616 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 215/215] 172.25.27.250 () {44 vars in 745 bytes} [Sun Oct 22 21:03:58 2017] GET / => generated 14023 bytes in 234 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 216/216] 172.25.27.250 () {46 vars in 830 bytes} [Sun Oct 22 21:04:02 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 99 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 217/217] 172.25.27.250 () {54 vars in 1059 bytes} [Sun Oct 22 21:04:08 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 68027 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 218/218] 172.25.27.250 () {44 vars in 745 bytes} [Sun Oct 22 21:32:55 2017] GET / => generated 14023 bytes in 650 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 219/219] 172.25.27.250 () {46 vars in 818 bytes} [Sun Oct 22 21:32:59 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 144 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 220/220] 172.25.27.250 () {48 vars in 849 bytes} [Sun Oct 22 21:33:14 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 85 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 221/221] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 21:52:00 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 1276 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 222/222] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 21:52:03 2017] GET /deploy/key_list_import/ => generated 0 bytes in 18822 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 223/223] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 21:52:22 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 59 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 224/224] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 22:13:39 2017] GET /deploy/key_list_import/ => generated 0 bytes in 16020 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 225/225] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 22:13:55 2017] GET /deploy/key_list_import/ => generated 0 bytes in 16135 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 226/226] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 22:14:11 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 40 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'type' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'action' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'content' at row 1
+  return self.cursor.execute(query, args)
+
+[pid: 26546|app: 0|req: 227/227] 172.25.27.250 () {46 vars in 832 bytes} [Sun Oct 22 22:44:32 2017] GET /accounts/logout/ => generated 0 bytes in 942 msecs (HTTP/1.1 302) 4 headers in 187 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 228/228] 172.25.27.250 () {46 vars in 756 bytes} [Sun Oct 22 22:44:33 2017] GET / => generated 0 bytes in 13 msecs (HTTP/1.1 302) 4 headers in 140 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 229/229] 172.25.27.250 () {46 vars in 799 bytes} [Sun Oct 22 22:44:33 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 189 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 230/230] 172.25.27.250 () {50 vars in 920 bytes} [Sun Oct 22 22:44:52 2017] POST /accounts/login/?next=/ => generated 0 bytes in 233 msecs (HTTP/1.1 302) 9 headers in 520 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 231/231] 172.25.27.250 () {46 vars in 804 bytes} [Sun Oct 22 22:44:52 2017] GET / => generated 14023 bytes in 53 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 232/232] 172.25.27.250 () {46 vars in 818 bytes} [Sun Oct 22 22:46:36 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 80 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[u'desktop.example.com', u'server9']
+[]
+[pid: 26546|app: 0|req: 233/233] 172.25.27.250 () {46 vars in 846 bytes} [Sun Oct 22 22:52:42 2017] GET /deploy/key_list_import/ => generated 0 bytes in 19766 msecs (HTTP/1.1 302) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 234/234] 172.25.27.250 () {46 vars in 836 bytes} [Sun Oct 22 22:53:02 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 645 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 235/235] 172.25.27.250 () {48 vars in 867 bytes} [Sun Oct 22 22:56:41 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 150 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 26546|app: 0|req: 236/236] 172.25.27.250 () {48 vars in 867 bytes} [Sun Oct 22 22:59:15 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 37 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Oct 23 22:16:53 2017] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 22 October 2017 18:26:16
+os: Linux-3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014
+nodename: server.example.com
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/oms_valor7
+writing pidfile to /var/run/uwsgi9090.pid
+detected binary path: /usr/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/oms_valor7/
+your processes number limit is 7807
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 2.7.5 (default, Feb 11 2014, 07:46:25)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-13)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x12ffe50
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145536 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x12ffe50 pid: 4044 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4044)
+spawned uWSGI worker 1 (pid: 4057, cores: 1)
+[pid: 4057|app: 0|req: 1/1] 172.25.27.250 () {46 vars in 776 bytes} [Mon Oct 23 22:16:59 2017] GET / => generated 14023 bytes in 220 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 2/2] 172.25.27.250 () {46 vars in 776 bytes} [Mon Oct 23 22:22:32 2017] GET / => generated 14023 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 3/3] 172.25.27.250 () {46 vars in 776 bytes} [Mon Oct 23 22:27:28 2017] GET / => generated 14023 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 4/4] 172.25.27.250 () {46 vars in 776 bytes} [Mon Oct 23 22:27:30 2017] GET / => generated 14023 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'type' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'action' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'content' at row 1
+  return self.cursor.execute(query, args)
+
+[pid: 4057|app: 0|req: 5/5] 172.25.27.250 () {46 vars in 814 bytes} [Mon Oct 23 22:27:43 2017] GET /accounts/logout/ => generated 0 bytes in 30 msecs (HTTP/1.1 302) 4 headers in 187 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 6/6] 172.25.27.250 () {46 vars in 738 bytes} [Mon Oct 23 22:27:43 2017] GET / => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 140 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 7/7] 172.25.27.250 () {46 vars in 781 bytes} [Mon Oct 23 22:27:43 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 27 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 8/8] 172.25.27.250 () {50 vars in 920 bytes} [Mon Oct 23 22:28:02 2017] POST /accounts/login/?next=/ => generated 0 bytes in 135 msecs (HTTP/1.1 302) 9 headers in 520 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 9/9] 172.25.27.250 () {46 vars in 804 bytes} [Mon Oct 23 22:28:02 2017] GET / => generated 14023 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 10/10] 172.25.27.250 () {46 vars in 818 bytes} [Mon Oct 23 22:28:12 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 11/11] 172.25.27.250 () {46 vars in 848 bytes} [Mon Oct 23 22:28:18 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE9\x83\xA8\xE7\xBD\xB2...' for column 'type' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE8\xBF\x9C\xE7\xA8\x8B...' for column 'content' at row 1
+  return self.cursor.execute(query, args)
+
+[pid: 4057|app: 0|req: 12/12] 172.25.27.250 () {54 vars in 1059 bytes} [Mon Oct 23 22:28:24 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 2802 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 13/13] 172.25.27.250 () {54 vars in 1059 bytes} [Mon Oct 23 22:28:44 2017] POST /deploy/remote_execution/exec/ => generated 222 bytes in 2984 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /deploy/remote_exec/check_result/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./deploy/views.py", line 728, in salt_ajax_result
+    rst_all = AjaxResult(jid,result_type,check_type)
+  File "./deploy/views.py", line 355, in AjaxResult
+    for k,v in rst.items():
+AttributeError: 'unicode' object has no attribute 'items'
+[pid: 4057|app: 0|req: 14/14] 172.25.27.250 () {54 vars in 1065 bytes} [Mon Oct 23 22:28:52 2017] POST /deploy/remote_exec/check_result/ => generated 13028 bytes in 661 msecs (HTTP/1.1 500) 3 headers in 107 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 15/15] 172.25.27.250 () {46 vars in 842 bytes} [Mon Oct 23 22:29:16 2017] GET /asset/server_info/ => generated 17120 bytes in 35 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 16/16] 172.25.27.250 () {46 vars in 830 bytes} [Mon Oct 23 22:29:21 2017] GET /asset/idc/list/ => generated 16330 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /deploy/task_list/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./deploy/views.py", line 1087, in salt_task_list
+    return render(request, 'salt_task_list.html', {'all_logs':logs})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python2.7/site-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 240, in __len__
+    self._fetch_all()
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (1267, "Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '<>'")
+[pid: 4057|app: 0|req: 17/17] 172.25.27.250 () {46 vars in 831 bytes} [Mon Oct 23 22:29:24 2017] GET /deploy/task_list/ => generated 191201 bytes in 174 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 18/18] 172.25.27.250 () {44 vars in 745 bytes} [Mon Oct 23 22:29:30 2017] GET / => generated 14023 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 19/19] 172.25.27.250 () {46 vars in 818 bytes} [Mon Oct 23 22:29:36 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 34 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 20/20] 172.25.27.250 () {46 vars in 836 bytes} [Mon Oct 23 22:29:38 2017] GET /deploy/group_list/ => generated 13767 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 21/21] 172.25.27.250 () {46 vars in 848 bytes} [Mon Oct 23 22:29:39 2017] GET /deploy/remote_execution/ => generated 23103 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 22/22] 172.25.27.250 () {46 vars in 848 bytes} [Mon Oct 23 22:29:41 2017] GET /deploy/module_deploy/ => generated 25056 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 23/23] 172.25.27.250 () {46 vars in 853 bytes} [Mon Oct 23 22:29:45 2017] GET /deploy/module_manage/add/ => generated 20980 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 24/24] 172.25.27.250 () {46 vars in 853 bytes} [Mon Oct 23 22:29:54 2017] GET /deploy/advanced_manage/ => generated 28505 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 4057|app: 0|req: 25/25] 172.25.27.250 () {46 vars in 845 bytes} [Mon Oct 23 22:29:56 2017] GET /deploy/project_list/ => generated 19463 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+...brutally killing workers...
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Nov 24 16:19:57 2017] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 22 October 2017 18:26:16
+os: Linux-3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014
+nodename: server.example.com
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/oms_valor7
+writing pidfile to /var/run/uwsgi9090.pid
+detected binary path: /usr/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/oms_valor7/
+your processes number limit is 7807
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 2.7.5 (default, Feb 11 2014, 07:46:25)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-13)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2087ef0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145536 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2087ef0 pid: 1435 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1435)
+spawned uWSGI worker 1 (pid: 1449, cores: 1)
+[pid: 1449|app: 0|req: 1/1] 172.25.27.250 () {44 vars in 737 bytes} [Fri Nov 24 16:20:21 2017] GET / => generated 0 bytes in 197 msecs (HTTP/1.1 302) 4 headers in 140 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 2/2] 172.25.27.250 () {44 vars in 780 bytes} [Fri Nov 24 16:20:21 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 38 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 1449|app: 0|req: 3/3] 172.25.27.250 () {46 vars in 794 bytes} [Fri Nov 24 16:20:21 2017] GET /favicon.ico => generated 10969 bytes in 17 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'type' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'action' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'content' at row 1
+  return self.cursor.execute(query, args)
+
+[pid: 1449|app: 0|req: 4/4] 172.25.27.250 () {56 vars in 1079 bytes} [Fri Nov 24 16:23:35 2017] POST /accounts/login/?next=/ => generated 3629 bytes in 161 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 5/5] 172.25.27.250 () {56 vars in 1079 bytes} [Fri Nov 24 16:23:43 2017] POST /accounts/login/?next=/ => generated 0 bytes in 145 msecs (HTTP/1.1 302) 9 headers in 520 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 6/6] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 16:23:43 2017] GET / => generated 14023 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 7/7] 172.25.27.250 () {48 vars in 875 bytes} [Fri Nov 24 16:23:54 2017] GET / => generated 14023 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 8/8] 172.25.27.250 () {48 vars in 911 bytes} [Fri Nov 24 16:23:57 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 9/9] 172.25.27.250 () {48 vars in 931 bytes} [Fri Nov 24 16:24:30 2017] GET /userauth/user/list/ => generated 21390 bytes in 33 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 10/10] 172.25.27.250 () {48 vars in 950 bytes} [Fri Nov 24 16:24:37 2017] GET /deploy/file_manage/download/ => generated 19979 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 11/11] 172.25.27.250 () {48 vars in 915 bytes} [Fri Nov 24 16:24:42 2017] GET /admin/ => generated 3015 bytes in 40 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 12/12] 172.25.27.250 () {48 vars in 881 bytes} [Fri Nov 24 16:24:46 2017] GET / => generated 14023 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 13/13] 172.25.27.250 () {48 vars in 887 bytes} [Fri Nov 24 16:24:48 2017] GET /admin/ => generated 3015 bytes in 25 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 14/14] 172.25.27.250 () {48 vars in 921 bytes} [Fri Nov 24 16:24:53 2017] GET /admin/userauth/user/ => generated 4374 bytes in 72 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 15/15] 172.25.27.250 () {46 vars in 804 bytes} [Fri Nov 24 16:24:53 2017] GET /admin/jsi18n/ => generated 7237 bytes in 28 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 16/16] 172.25.27.250 () {48 vars in 887 bytes} [Fri Nov 24 16:24:58 2017] GET /admin/ => generated 3015 bytes in 52 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 17/17] 172.25.27.250 () {48 vars in 893 bytes} [Fri Nov 24 16:24:59 2017] GET /admin/ => generated 3015 bytes in 26 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1449|app: 0|req: 18/18] 172.25.27.250 () {48 vars in 911 bytes} [Fri Nov 24 16:25:07 2017] GET /deploy/hosts_list/ => generated 17737 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/oms_valor7
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:9090)
+running /usr/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Nov 24 16:25:35 2017] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 22 October 2017 18:26:16
+os: Linux-3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014
+nodename: server.example.com
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/oms_valor7
+detected binary path: /usr/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/oms_valor7/
+your processes number limit is 7807
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:9090 fd 3
+Python version: 2.7.5 (default, Feb 11 2014, 07:46:25)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-13)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x21bba20
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145536 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x21bba20 pid: 1435 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1435)
+spawned uWSGI worker 1 (pid: 1892, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Nov 24 16:36:00 2017] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 22 October 2017 18:26:16
+os: Linux-3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014
+nodename: server.example.com
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/oms_valor7
+writing pidfile to /var/run/uwsgi9090.pid
+detected binary path: /usr/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/oms_valor7/
+your processes number limit is 7807
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:9090).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 1892|app: 0|req: 1/1] 172.25.27.250 () {46 vars in 838 bytes} [Fri Nov 24 16:36:14 2017] GET / => generated 14023 bytes in 98 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'type' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'action' at row 1
+  return self.cursor.execute(query, args)
+
+/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py:112: Warning: Incorrect string value: '\xE7\x94\xA8\xE6\x88\xB7...' for column 'content' at row 1
+  return self.cursor.execute(query, args)
+
+[pid: 1892|app: 0|req: 2/2] 172.25.27.250 () {48 vars in 907 bytes} [Fri Nov 24 16:36:18 2017] GET /accounts/logout/ => generated 0 bytes in 16 msecs (HTTP/1.1 302) 4 headers in 187 bytes (1 switches on core 0)
+[pid: 1892|app: 0|req: 3/3] 172.25.27.250 () {48 vars in 831 bytes} [Fri Nov 24 16:36:18 2017] GET / => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 140 bytes (1 switches on core 0)
+[pid: 1892|app: 0|req: 4/4] 172.25.27.250 () {48 vars in 874 bytes} [Fri Nov 24 16:36:18 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/oms_valor7
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:9090)
+running /usr/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Nov 24 16:37:21 2017] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 22 October 2017 18:26:16
+os: Linux-3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014
+nodename: server.example.com
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/oms_valor7
+detected binary path: /usr/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/oms_valor7/
+your processes number limit is 7807
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:9090 fd 3
+Python version: 2.7.5 (default, Feb 11 2014, 07:46:25)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-13)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x26a5a20
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145536 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x26a5a20 pid: 1435 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1435)
+spawned uWSGI worker 1 (pid: 2154, cores: 1)
+[pid: 2154|app: 0|req: 1/1] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:24 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 77 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 2/2] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:25 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 3/3] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:25 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 4/4] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:25 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 5/5] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:25 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 6/6] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:25 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 7/7] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:25 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 8/8] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:26 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 8 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 9/9] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:26 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 10/10] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:26 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 11/11] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:26 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 12/12] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:26 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 4 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 13/13] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:27 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 14/14] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:27 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 15/15] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:28 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2154|app: 0|req: 16/16] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:37:28 2017] GET /accounts/login/?next=/ => generated 3533 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/oms_valor7
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:9090)
+running /usr/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Nov 24 16:37:39 2017] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 22 October 2017 18:26:16
+os: Linux-3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014
+nodename: server.example.com
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/oms_valor7
+detected binary path: /usr/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/oms_valor7/
+your processes number limit is 7807
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:9090 fd 3
+Python version: 2.7.5 (default, Feb 11 2014, 07:46:25)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-13)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xecaa20
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145536 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xecaa20 pid: 1435 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1435)
+spawned uWSGI worker 1 (pid: 2170, cores: 1)
+DAMN ! worker 1 (pid: 2170) died, killed by signal 9 :( trying respawn ...
+Respawned uWSGI worker 1 (new pid: 2172)
+[pid: 2172|app: 0|req: 1/1] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:49 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 73 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 2/2] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:49 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 4 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 3/3] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:50 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 4/4] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:50 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 5/5] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:50 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 6/6] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:50 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 4 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 7/7] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:50 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 4 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 8/8] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:50 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 9/9] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:51 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 10/10] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:51 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 4 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 11/11] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:51 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 12/12] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:52 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 4 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 13/13] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:52 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 4 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+[pid: 2172|app: 0|req: 14/14] 172.25.27.250 () {50 vars in 905 bytes} [Fri Nov 24 16:39:52 2017] GET /accounts/login/?next=/ => generated 3529 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 373 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Nov 24 17:17:03 2017] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 22 October 2017 18:26:16
+os: Linux-3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014
+nodename: server.example.com
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/oms_valor7
+writing pidfile to /var/run/uwsgi9090.pid
+detected binary path: /usr/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/oms_valor7/
+your processes number limit is 7807
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:9090).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Nov 24 17:20:38 2017] ***
+compiled with version: 4.8.2 20140120 (Red Hat 4.8.2-16) on 22 October 2017 18:26:16
+os: Linux-3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014
+nodename: server.example.com
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/oms_valor7
+writing pidfile to /var/run/uwsgi9090.pid
+detected binary path: /usr/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/oms_valor7/
+your processes number limit is 7807
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:9090 fd 3
+Python version: 2.7.5 (default, Feb 11 2014, 07:46:25)  [GCC 4.8.2 20140120 (Red Hat 4.8.2-13)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x20a7f00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145536 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x20a7f00 pid: 8255 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 8255)
+spawned uWSGI worker 1 (pid: 8268, cores: 1)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 1/1] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:20:42 2017] GET / => generated 77530 bytes in 365 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 2/2] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:20:44 2017] GET / => generated 77530 bytes in 82 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 3/3] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:20:45 2017] GET / => generated 77530 bytes in 80 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 4/4] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:23:38 2017] GET / => generated 77530 bytes in 199 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 5/5] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:23:38 2017] GET / => generated 77530 bytes in 85 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 6/6] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:25:00 2017] GET / => generated 77530 bytes in 83 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 7/7] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:25:01 2017] GET / => generated 77530 bytes in 82 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 8/8] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:25:01 2017] GET / => generated 77530 bytes in 82 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 9/9] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:25:02 2017] GET / => generated 77530 bytes in 78 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 10/10] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:25:02 2017] GET / => generated 77530 bytes in 88 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 11/11] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:25:02 2017] GET / => generated 77530 bytes in 82 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 12/12] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:25:02 2017] GET / => generated 77530 bytes in 84 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 13/13] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:25:03 2017] GET / => generated 77530 bytes in 83 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 14/14] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:25:03 2017] GET / => generated 77530 bytes in 84 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./userauth/views.py", line 62, in index
+    return render(request, 'oms_valor7_help.html', {})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: oms_valor7_help.html
+[pid: 8268|app: 0|req: 15/15] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:25:04 2017] GET / => generated 77530 bytes in 86 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 16/16] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:29:39 2017] GET / => generated 14011 bytes in 46 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 17/17] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:30:46 2017] GET / => generated 14011 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 18/18] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:30:47 2017] GET / => generated 14011 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 19/19] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:30:47 2017] GET / => generated 14011 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 20/20] 172.25.27.250 () {50 vars in 928 bytes} [Fri Nov 24 17:30:47 2017] GET / => generated 14011 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 21/21] 172.25.27.250 () {48 vars in 911 bytes} [Fri Nov 24 17:30:50 2017] GET /deploy/hosts_list/ => generated 17725 bytes in 38 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 22/22] 172.25.27.250 () {48 vars in 929 bytes} [Fri Nov 24 17:30:51 2017] GET /deploy/group_list/ => generated 13755 bytes in 33 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 23/23] 172.25.27.250 () {48 vars in 941 bytes} [Fri Nov 24 17:30:52 2017] GET /deploy/remote_execution/ => generated 23091 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 24/24] 172.25.27.250 () {48 vars in 935 bytes} [Fri Nov 24 17:30:53 2017] GET /deploy/group_list/ => generated 13755 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 25/25] 172.25.27.250 () {48 vars in 941 bytes} [Fri Nov 24 17:30:55 2017] GET /deploy/remote_execution/ => generated 23091 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 26/26] 172.25.27.250 () {48 vars in 941 bytes} [Fri Nov 24 17:30:56 2017] GET /deploy/module_deploy/ => generated 25044 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 27/27] 172.25.27.250 () {48 vars in 942 bytes} [Fri Nov 24 17:30:57 2017] GET /deploy/advanced_manage/ => generated 28493 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 28/28] 172.25.27.250 () {48 vars in 938 bytes} [Fri Nov 24 17:30:58 2017] GET /deploy/project_list/ => generated 19451 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 29/29] 172.25.27.250 () {48 vars in 951 bytes} [Fri Nov 24 17:31:01 2017] GET /deploy/file_manage/download/ => generated 19967 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 30/30] 172.25.27.250 () {48 vars in 955 bytes} [Fri Nov 24 17:31:02 2017] GET /deploy/file_manage/upload/ => generated 27248 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 31/31] 172.25.27.250 () {48 vars in 957 bytes} [Fri Nov 24 17:31:04 2017] GET /deploy/file_manage/rollback/ => generated 30741 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 32/32] 172.25.27.250 () {48 vars in 939 bytes} [Fri Nov 24 17:31:06 2017] GET /asset/server_info/ => generated 17108 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 33/33] 172.25.27.250 () {48 vars in 923 bytes} [Fri Nov 24 17:31:07 2017] GET /asset/idc/list/ => generated 16318 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+Internal Server Error: /deploy/task_list/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./deploy/views.py", line 1086, in salt_task_list
+    return render(request, 'salt_task_list.html', {'all_logs':logs})
+  File "/usr/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/lib/python2.7/site-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python2.7/site-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python2.7/site-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python2.7/site-packages/django/template/defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 240, in __len__
+    self._fetch_all()
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/usr/lib/python2.7/site-packages/django/db/models/query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "/usr/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "/usr/lib64/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (1267, "Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '<>'")
+[pid: 8268|app: 0|req: 34/34] 172.25.27.250 () {48 vars in 924 bytes} [Fri Nov 24 17:31:10 2017] GET /deploy/task_list/ => generated 191325 bytes in 216 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 35/35] 172.25.27.250 () {48 vars in 926 bytes} [Fri Nov 24 17:31:17 2017] GET /deploy/task_check/ => generated 18053 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 36/36] 172.25.27.250 () {48 vars in 931 bytes} [Fri Nov 24 17:31:20 2017] GET /userauth/user/list/ => generated 27569 bytes in 46 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8268|app: 0|req: 37/37] 172.25.27.250 () {48 vars in 894 bytes} [Fri Nov 24 17:31:25 2017] GET / => generated 14011 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)

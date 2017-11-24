@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% block css %}
+<link href="/static/css/dataTables.bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>软硬件资产信息 </h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Settings 1</a>
+                                </li>
+                                <li><a href="#">Settings 2</a>
+                                </li>
+                            </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                        <form class="form-horizontal form-border" method="get" action="" name="formName">
+                    <div class="info">
+                        <a href="{% url 'server_info' %}?action=flush" class="btn btn-info btn-sm" role="button" {% if not perms.asset.edit_asset %}disabled{% endif %}>刷新资产信息</a>
+                        <button type="submit" class="btn btn-info btn-sm" name="export" value="check">导出</button>
+                        <button type="submit" class="btn btn-info btn-sm" name="export" value="check_all">全部导出</button>
+                    </div>
+                    <div class="x_content table-responsive" style="border:none">
+                        <div class="ln_solid"></div>
+                        <table id="datatable" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" name="alls" onClick="selectAll('formName','id')" title="全选/反选"></th>
+                                    <th>详细</th>
+                                    <th>主机名</th>
+                                    <th>操作系统</th>
+                                    <th>CPU型号</th>
+                                    <th>线程</th>
+                                    <th>内存</th>
+                                    <th>分区</th>
+                                    <th>网络接口</th>
+                                    <th>平台</th>
+                                    <th>序列号</th>
+                                    <th>厂商型号</th>
+                                    <th>机房</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for server in all_server %}
+                                <tr id="{{ server.pk }}">
+                                    <td><input class="icheck" type="checkbox" value="{{ server.pk }}" name="id"></td>
+                                    <td><a href="{% url 'server_info' %}?aid={{ server.pk }}"><i class="fa fa-envelope"></a></td>
+                                    <td>{{ server.hostname }} 【{{ server.nodename }}】</td>
+                                    <td>{{ server.os }}</td>
+                                    <td>{{ server.cpu_model }}</td>
+                                    <td>{{ server.cpu_nums }}</td>
+                                    <td>{{ server.memory }}</td>
+                                    <td>{{ server.disk|linebreaksbr }}</td>
+                                    <td>{{ server.network|linebreaksbr }}</td>
+                                    <td>{{ server.virtual }}</td>
+                                    <td>{{ server.sn }}</td>
+                                    <td>{{ server.manufacturer }}<br />{{ server.productname  }}</td>
+                                    <td>{{ server.idc }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="/static/js/jquery.dataTables.min.js"></script>
+<script src="/static/js/dataTables.bootstrap.min.js"></script>
+<!-- Datatables -->
+<script>
+    $(document).ready(function() {
+            $('#datatable').dataTable();
+            });
+</script>
+
+<!-- /Datatables -->
+<script>
+/* 全选/反选
+   formName所在form的name值
+   checkboxName checkbox的name值
+   注意：所有checkbox的name值必须一样
+*/
+var checkedAll = false;
+function selectAll(formName,checkboxName){
+    var form = document.all.item(formName);
+    var elements = form.elements[checkboxName];
+    for(var i=0;i<elements.length;i++){
+        var e = elements[i];
+        if(checkedAll){
+            e.checked = false;
+            form.alls.checked = false;
+        }else{
+            e.checked = true;
+            form.alls.checked = true;
+        }
+    }
+    if(checkedAll){
+        checkedAll = false;
+    }else{
+        checkedAll = true;
+    }
+}
+/* 检查是否有checkbox被选中
+   checkbox的name值必须一样，这样才能达到全选效果
+*/
+function checkAll(formName,checkboxName){
+    var hasCheck = false;
+    var form = document.all.item(formName);
+    var elements = form.elements[checkboxName];
+    for(var i=0;i<elements.length;i++){
+        var e = elements[i];
+        if(e.checked){
+            hasCheck = true;
+        }
+    }
+    return hasCheck;
+}
+/* 执行操作 */
+function do_action(){
+    if(!checkAll("formName","id")){
+        alert("请至少选择一项！");
+    }
+}
+</script>
+
+{% endblock %}

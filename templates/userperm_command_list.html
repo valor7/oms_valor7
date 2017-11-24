@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load myfilter %}
+{% block content %}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <a href="{% url 'command_add' %}" style="float:left;" class="btn btn-info btn-sm" role="button"><i class="fa fa-plus"></i></a>
+                        <h2>远程命令管理 </h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Settings 1</a>
+                                </li>
+                                <li><a href="#">Settings 2</a>
+                                </li>
+                            </ul>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    {% for i in all_command %}
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>{{ i.name }}</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                    <li><a href="{% url 'command_edit' id=i.pk %}"><i class="fa fa-pencil"></i></a></li>
+                                    <li><a href="#"  data-toggle="modal" data-target="#reqDelete-{{ i.pk }}"><i class="fa fa-trash-o "></i></a></li>
+
+                                    <!-- 模态框（Modal） -->
+                                    <div class="modal fade" id="reqDelete-{{ i.pk }}" tabindex="-1" role="dialog" aria-labelledby="reqDelete" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4 class="modal-title" id="reqDelete">提示</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    确认是否删除？
+                                                    <div><br /><strong>{{ i.name }}</strong></p></div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">关闭</button>
+                                                    <a style="margin:4px;" class="btn btn-danger btn-sm" href="{% url 'command_delete' %}?id={{ i.pk }}&delete=1">删除</a>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+
+                                <div class="bs-example" data-example-id="simple-jumbotron">
+                                    <div class="x_content">
+                                        {% for i in i.command|str_split:',' %}
+                                            <span class="tag">{{ i }}</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

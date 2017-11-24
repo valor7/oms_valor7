@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load myinclusion %}
+{% block css %}
+<link href="/static/css/bootstrapValidator.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="tabbable" id="tabs-754998">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                        <a href="#panel-single" data-toggle="tab">单机部署</a>
+                        </li>
+                        <li>
+                        <a href="#panel-group" data-toggle="tab">批量部署</a>
+                        </li>
+                        {% if perms.deploy.edit_module %}
+                        <li>
+                        <a href="{% url 'module_list' %}">模块管理</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+
+                    <div class="x_panel" style="border-top:none;">
+                        <div class="x_title">
+                            <h2>模块部署 </h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <div class="loading"></div>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="panel-single">
+                                    <form class="form-horizontal form-border" method="post" action="" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {% if perms.deploy.edit_deploy %}
+                                        <fieldset>
+                                        {% else %}
+                                        <fieldset disabled="disabled">
+                                        {% endif %}
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">目标主机 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                {% show_user_group_minions request.user.pk request.user.is_superuser 'multiple' %}
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">安装模块 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                {% show_modules request.user request.user.is_superuser %}
+                                            </div>
+                                        </div>
+                                        <div name="remark" class="item form-group">
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <a href="#" onclick="remote_exec(this, 'deploy', '{% url 'ajax_deploy' %}');" name="panel-single" role="button" class="btn btn-success">运行</a>
+                                                <a href="#" onclick="show_result();" role="button" class="btn btn-info">查看结果</a>
+                                            </div>
+                                        </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div class="tab-pane" id="panel-group">
+                                    <form class="form-horizontal form-border" method="post" action="" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {% if perms.deploy.edit_deploy %}
+                                        <fieldset>
+                                        {% else %}
+                                        <fieldset disabled="disabled">
+                                        {% endif %}
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">目标主机 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                {% show_user_group_groups request.user.pk request.user.is_superuser %}
+                                            </div>
+                                        </div>
+                                        <div name="group_minions" class="item form-group">
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">安装模块 <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                {% show_modules  request.user request.user.is_superuser %}
+                                            </div>
+                                        </div>
+                                        <div name="remark" class="item form-group">
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <a href="#" onclick="remote_exec(this, 'deploy', '{% url 'ajax_deploy' %}');" name="panel-group" role="button" class="btn btn-success">运行</a>
+                                                <a href="#" onclick="show_result();" role="button" class="btn btn-info">查看结果</a>
+                                            </div>
+                                        </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div id="result"></div>
+                    <!-- 模态框（Modal） -->
+                    <div class="modal fade" id="result-modal-salt" tabindex="-1" role="dialog" aria-labelledby="result-modal" aria-hidden="true">
+                        <div class="modal-loading"></div>
+                        <div class="modal-dialog">
+                            <div class="modal-content" style="background-color:#272822;color:#00ff00;">
+                                <div class="modal-header" style="border-bottom:1px solid #666">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <b class="modal-title" id="result-modal" style="color:#f8f8f2">运行结果</b>&nbsp;
+                                    <a href="#" onclick="result_check('deploy', '{% url 'ajax_result' %}')" role="button" class="btn btn-dark btn-xs">重新查询</a>
+                                    <a href="#" onclick="collapse(this);" state="0" role="button" class="btn btn-dark btn-xs">展开所有</a>
+                                </div>
+                                <div id="modal-body" class="modal-body">
+                                    <div class="panel-group" id="accordion">
+                                    </div>
+                                </div>
+                                <!--<div class="modal-footer">
+
+                                </div>-->
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+
+                <input type="hidden" class="form-control" value="" id="jid">
+                <input type="hidden" class="form-control" value="" id="exec_type">
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+{#<script src="/static/js/bootstrapValidator.min.js"></script>#}
+<script src="/static/js/bootstrap-modal-vertical.js"></script>
+<script src="/static/js/csrf.js"></script>
+<script src="/static/js/salt_result.js"></script>
+<script>
+    $(function(){
+            $("button[name='check']").bind("click",function(){
+                var jid = $("#jid").val();
+                if(jid==""){
+                return false;
+                }
+                var exec_type = $("#exec_type").val();
+                $(".loading").show();
+                $.ajax({
+type:"POST",
+url:"{% url 'ajax_result' %}",
+data:{jid:jid,"type":"deploy"},
+dataType:"html",
+success:function(ret) {
+$(".loading").hide();
+var ret = eval('('+ret+')');
+if(exec_type=="false"){
+$("#panel-single textarea[name='result']").html(ret);
+}
+else{
+$("#panel-group textarea[name='result']").html(ret);
+}
+},
+errors:function(e){
+alert("error");
+}
+});
+return false;
+})
+})
+
+
+{% for panel in groups %}
+$(function(){
+        $("#{{ panel }} select[name='module_list']").bind("change",function(){
+            var remark = $("#{{ panel }} select[name='module_list'] option:selected").attr("title");
+            if(remark!=""){
+            var remark = "<label class=\"control-label col-md-3 col-sm-3 col-xs-12\">备注</label><div class=\"col-md-6 col-sm-6 col-xs-12\"><fieldset disabled><textarea class=\"form-control\" name=\"remark\">"+remark+"</textarea></fieldset></div>";
+            $("#{{ panel }} div[name='remark']").html(remark);
+            }
+            else{
+            $("#{{ panel }} div[name='remark']").html("");
+            }
+            })
+        })
+{% endfor %}
+
+$(function(){
+        $("#panel-group select[name='tgt_select']").bind("change",function(){
+            var tgt_select = $("#panel-group select[name='tgt_select']").val();
+            if(tgt_select!=""){
+            $.ajax({
+type:"POST",
+url:"{% url 'ajax_minions' %}",
+data:{tgt_select:tgt_select},
+dataType:"html",
+success:function(ret){
+var ret = eval('('+ret+')');
+var html = "<label class=\"control-label col-md-3 col-sm-3 col-xs-12\">包含主机</label><div class=\"col-md-6 col-sm-6 col-xs-12\"><fieldset disabled><textarea class=\"form-control\">"+ret+"</textarea></fieldset></div>";
+$("#panel-group div[name='group_minions']").html(html);
+}
+})
+            }
+            else{
+            $("#panel-group div[name='group_minions']").html("");
+            }
+            })
+        })
+
+</script>
+{% endblock %}

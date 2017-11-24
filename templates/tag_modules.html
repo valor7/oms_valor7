@@ -1,0 +1,11 @@
+{% if module_list %}
+<select name="module_list" class="form-control" required="required">
+    <option name="" value="" title="">请选择</option>
+    {% for module in module_list %}
+    <option name="module" value="{{ module.pk }}" title="{{ module.remark }}">{{ module.name }}</option>
+    {% endfor %}
+</select>
+{% else %}
+<a href="{% url 'module_add' %}" class="btn btn-default" role="button">暂无模块 <i class="fa fa-plus"></i></a>
+{% endif %}
+

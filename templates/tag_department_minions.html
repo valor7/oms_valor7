@@ -1,0 +1,5 @@
+<select name="tgt_select" class="form-control" multiple size="4" required data-bv-notempty>
+    {% for tgt in tgt_list %}
+    <option name="tgt" value="{{ tgt }}">{{ tgt }}</option>
+    {% endfor %}
+</select>
